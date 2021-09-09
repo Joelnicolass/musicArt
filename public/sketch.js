@@ -13,8 +13,8 @@ let onVoice = 0;
 let o = 8;
 /* let width = 500;
 let height = 500; */
-let mult = 0.008;
-let density = 10;
+let mult = 0.009; /* 0.008; */
+let density = 25;
 let space;
 let points = [];
 let pointsb = [];
@@ -25,21 +25,22 @@ let colorfill;
 let c1;
 let c2;
 let finalfill;
+
 //SETUP---------------------------------------------------------
 
 function setup() {
   angleMode(DEGREES);
-  noiseDetail(1.5, 8);
+  noiseDetail(1.5, 15 /* 8 random(1, 10) */);
 
   if (windowWidth < 700) {
     createCanvas(windowWidth / 1.1, windowHeight / 2);
-    density = 10;
+    /* density = 20; */
   } else if (windowWidth > 700 && windowWidth < 1000) {
     createCanvas(windowWidth / 1.5, windowHeight / 2);
-    density = 20;
+    /* density = 20; */
   } else if (windowWidth > 1000) {
     createCanvas(windowWidth / 2.5, windowHeight / 2);
-    density = 20;
+    /* density = 20; */
   }
 
   pixelDensity(1);
@@ -192,9 +193,9 @@ function colorTone(note) {
       break;
 
     default:
-      r = 255;
-      g = 255;
-      b = 255;
+      /*       r = 0;
+      g = 0;
+      b = 0; */
       break;
   }
 }
@@ -215,6 +216,7 @@ function windowResized() {
     density = 20;
   }
 }
+
 //RENDER--------------------------------------------------------
 
 function draw() {
@@ -228,8 +230,8 @@ function draw() {
   //agrandar ruido
 
   /* density = o + 0.005; */
-  /* o = o + 0.05;
-  noiseDetail(1.5, o); */
+  /* o = o + 1; */
+  /* noiseDetail(1.5, o); */
 
   //color notas
   colorTone(noteFinal());
@@ -265,7 +267,7 @@ function draw() {
     points[i].add(createVector(cos(angle), sin(angle)));
 
     if (dist(width / 2, height / 2, points[i].x, points[i].y) < 230) {
-      ellipse(points[i].x, points[i].y, mic.getLevel() * 20);
+      ellipse(points[i].x, points[i].y, /* mic.getLevel() * 20 */ 0.5);
     }
   }
 }
