@@ -29,7 +29,7 @@ let finalfill;
 
 function setup() {
   angleMode(DEGREES);
-  noiseDetail(1.5, 8);
+  /* noiseDetail(1.5, 8); */
 
   if (windowWidth < 700) {
     createCanvas(windowWidth / 1.1, windowHeight / 2);
