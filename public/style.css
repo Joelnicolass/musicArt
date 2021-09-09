@@ -1,0 +1,29 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(39, 39, 39);
+  height: 100vh;
+  width: 100vw;
+}
+
+h1 {
+  color: rgb(211, 211, 211);
+  margin-bottom: 2rem;
+}
+
+canvas {
+  width: 25%;
+  height: 25%;
+  border-radius: 5%;
+  background: linear-gradient(145deg, #232323, #2a2a2a);
+  box-shadow: 11px 11px 20px #151515, -11px -11px 20px #393939;
+  margin-bottom: 2rem;
+}
