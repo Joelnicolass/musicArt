@@ -4,6 +4,7 @@
 // Using express: http://expressjs.com/
 var express = require("express");
 var cors = require("cors");
+const path = require("path");
 // Create the app
 var app = express();
 
@@ -19,7 +20,8 @@ function listen() {
 }
 
 app.use(cors());
-app.use(express.static("public"));
+/* app.use(express.static("public")); */
+app.use(express.static(path.join(__dirname, "public")));
 
 // WebSocket Portion
 // WebSockets work with the HTTP server
