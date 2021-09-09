@@ -42,6 +42,8 @@ function setup() {
     density = 20;
   }
 
+  pixelDensity(1);
+
   space = width / density;
   background(20);
   /* frameRate(30); */
